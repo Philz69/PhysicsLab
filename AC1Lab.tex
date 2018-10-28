@@ -1,0 +1,65 @@
+\documentclass{report}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\everymath{\displaystyle}
+\begin{document}
+\begin{titlepage}
+    \centering
+    203-NYB-05\\
+    Electricity and Magnetism\\
+    Professor: Ernest Dubeau\par
+    \vspace{5cm}
+    \Large AC Circuits: Lab 1\par
+    \normalsize
+    By:\\
+    Philipe Goulet\\
+    \vspace*{\fill}
+    {\today}\\
+    Departement of Physics\\
+    Champlain Regional College\\
+    Lennoxville, Quebec, Canada
+\end{titlepage}
+\section*{Procedure}
+\section*{Apparatus}
+\newpage
+\section*{Results}
+\subsection*{a) AC circuit with a single resistor}
+\paragraph{Measurements}\mbox{}\\
+\begin{gather}
+    \Delta\si{\volt}_{\max}=4.0\si{\volt}\pm0.2\si{\volt}\\
+    \Delta\si{\volt}_{rms}=2.79\si{\volt}\pm0.06\si{\volt} \label{eq:vrmsmeasured}\\
+    I_{rms}=4.0\si{\volt}\pm0.2\si{\volt}\\ 
+    T=1.00\si{\milli}\si{\second}\pm0.04\si{\milli}\si{\second}
+\end{gather}
+\paragraph{Calculations}\mbox{}\\
+\begin{align}
+    \Delta\si{\volt}_{rms}&=\frac{\Delta\si{\volt}_{\max}}{\sqrt{2}} \nonumber\\
+    \Delta\si{\volt}_{rms}&=\frac{4.0\si{\volt}\pm0.2\si{\volt}}{\sqrt{2}}\nonumber\\
+    \Delta\si{\volt}_{rms}&=2.8\si{\volt}\pm0.1\si{\volt} \label{eq:vrmscalc}
+\end{align}
+\begin{align}
+    P_{avg}&=\Delta\si{\volt}_{rms}I_{rms}\nonumber\\
+    P_{avg}&=2.79\si{\volt}\pm0.06\si{\volt} * 4.0\si{\volt}\pm0.2\si{\volt} \nonumber\\ 
+    P_{avg}&=0.285\si{\watt}\pm0.012\si{\watt}
+\end{align}
+\begin{align}
+    F&=\frac{1}{T} \nonumber\\
+    F &=\frac{1}{0.001 \si{\second} \pm 0.0004 \si{\second} }\nonumber\\ 
+    F &=1000\si{\hertz} \pm 40\si{\hertz} \label{eq:frequencycalc}
+\end{align}
+\paragraph{Discussion}\mbox{}\\
+The voltage$_{rms}$ measured at~\eqref{eq:vrmsmeasured} agrees with the calculated value at~\eqref{eq:vrmscalc}\\
+The frequency calculated at~\eqref{eq:frequencycalc} agrees with the given value of 1000 \si{\hertz}\\
+When the frequency was set to 100\si{\hertz}, a time scale of 2\si{\milli}\si{\second}/div was needed for proper observation\\
+When the frequency was set to 10\si{\hertz}, a time scale of 20\si{\milli}\si{\second}/div was needed for proper observation. The sine wave shown on the oscilloscope also started flashing\\
+Since this is an ac circuit, the lamp should flash twice per period. Thus, by setting the frequency to 1 \si{\hertz} should make the lamp light up 20 times over 10 seconds. This was confirmed when tested, and the lamp does flash twice per period because there is two voltage peaks during one period.
+\subsection*{b) AC circuit with an inductor}
+\paragraph{Measurements}\mbox{}\\
+\begin{gather}
+    \Delta\si{\volt}_{L\max}=4.0\si{\volt}\pm0.2\si{\volt}\\
+    \Delta\si{\volt}_{Lrms}=2.79\si{\volt}\pm0.06\si{\volt}\\ 
+    I_{rms}=4.0\si{\volt}\pm0.2\si{\volt}\\ 
+    T=1.00\si{\milli}\si{\second}\pm0.04\si{\milli}\si{\second}
+\end{gather}
+\end{document}
