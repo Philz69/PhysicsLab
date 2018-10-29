@@ -56,10 +56,55 @@ When the frequency was set to 10\si{\hertz}, a time scale of 20\si{\milli}\si{\s
 Since this is an ac circuit, the lamp should flash twice per period. Thus, by setting the frequency to 1 \si{\hertz} should make the lamp light up 20 times over 10 seconds. This was confirmed when tested, and the lamp does flash twice per period because there is two voltage peaks during one period.
 \subsection*{b) AC circuit with an inductor}
 \paragraph{Measurements}\mbox{}\\
+With F=1800Mhz
 \begin{gather}
-    \Delta\si{\volt}_{L\max}=4.0\si{\volt}\pm0.2\si{\volt}\\
-    \Delta\si{\volt}_{Lrms}=2.79\si{\volt}\pm0.06\si{\volt}\\ 
-    I_{rms}=4.0\si{\volt}\pm0.2\si{\volt}\\ 
-    T=1.00\si{\milli}\si{\second}\pm0.04\si{\milli}\si{\second}
+    \Delta\si{\volt}_{Lrms}=2.73\si{\volt}\pm0.06\si{\volt}\\ 
+    I_{rms}=23.8\si{\milli\ampere}\pm0.8\si{\milli\ampere}
 \end{gather}
+With F=1600Mhz
+\begin{gather}
+    \Delta\si{\volt}_{Lrms}=2.73\si{\volt}\pm0.06\si{\volt}\\ 
+    I_{rms}=26.4\si{\milli\ampere}\pm0.8\si{\milli\ampere}
+\end{gather}
+\paragraph{Calculations}\mbox{}\\
+\begin{align}
+    \Delta\si{\volt}_{Lrms}&=X_{L}I_{rms}\nonumber\\
+    X_{L}&=\frac{\Delta\si{\volt}_{Lrms}}{I_{rms}}\nonumber\\
+    X_{L}&=\frac{2.73\si{\volt}\pm0.06\si{\volt}}{23.8\si{\milli\ampere}\pm0.8\si{\milli\ampere}}\nonumber\\
+    X_{L}&=11.47\frac{\si{\volt}}{\si{\ampere}} \pm 0.29 \frac{\si{\volt}}{\si{\ampere}} \label{eq:xlcalc}
+\end{align}
+\begin{align}
+    X_{L}&=\omega L\nonumber\\
+    L&=\frac{X_{L}}{\omega}\nonumber\\
+    L&=\frac{114.7\frac{\si{\volt}}{\si{\ampere}} \pm 0.3 \frac{\si{\volt}}{\si{\ampere}}}{2\pi1800\si{\hertz}} \nonumber\\
+    L&=10.14\si{\milli}\si{\henry} \pm 0.26\si{\milli}\si{\henry}\label{eq:lcalc}
+\end{align}
+\paragraph{Discussion}\mbox{}\\
+The value of L calulated at~\eqref{eq:lcalc} agrees with the nomival value of 10$\si{\milli}\si{\henry}\pm1\si{\milli}\si{\henry}$\\
+When the frequency of the ac source was changed to 1600hz the $\Delta\si{\volt}_{Lrms}$ did not change and the I$_{rms}$ went down linearly.
+\newpage
+\subsection*{c) AC Circuit with a capacitor}\mbox{}\\
+\paragraph{Measurements}\mbox{}\\
+\begin{gather}
+    \Delta\si{\volt}_{Crms}=2.76\si{\volt}\\
+    I_{Crms}=16.8\si{\milli\ampere}
+\end{gather}
+\paragraph{Calculations}\mbox{}\\
+\begin{align}
+    \Delta\si{\volt}_{Crms}&=X_{L}I_{Crms}\nonumber\\
+    X_{C}&=\frac{\Delta\si{\volt}_{Crms}}{I_{Crms}}\nonumber\\
+    X_{C}&=\frac{2.76\si{\volt}}{16.8\si{\milli\ampere}}\nonumber\\
+    X_{C}&=164.3\frac{\si{\volt}}{\si{\ampere}}\label{eq:xccalc}
+\end{align}
+\begin{align}
+    X_{C}&=\frac{1}{\omega C}\nonumber\\
+    C&=\frac{1}{\omega X_{C}}\nonumber\\
+    C&=\frac{1}{2\pi1000\si{\hertz}*164.3\frac{\si{\volt}}{\si{\ampere}}}\nonumber\\
+    C&=0.9687\si{\micro\farad}
+\end{align}
+\begin{align}
+    \%error&=100 * (C_{cal} - 1.00\si{\micro\farad})/1.00\si{\micro\farad}\nonumber\\
+    \%error&=100 * (0.9687\si{\micro\farrad} - 1.00\si{\micro\farad})/1.00\si{\micro\farad}\nonumber\\
+    \%error&=3.13\%
+\end{align}
 \end{document}
