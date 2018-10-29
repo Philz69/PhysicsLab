@@ -87,7 +87,8 @@ When the frequency of the ac source was changed to 1600hz the $\Delta\si{\volt}_
 \paragraph{Measurements}\mbox{}\\
 \begin{gather}
     \Delta\si{\volt}_{Crms}=2.76\si{\volt}\\
-    I_{Crms}=16.8\si{\milli\ampere}
+    I_{Crms}=16.8\si{\milli\ampere}\\
+    I_{Crms(600hz)}=10.1\si{\milli\ampere}
 \end{gather}
 \paragraph{Calculations}\mbox{}\\
 \begin{align}
@@ -104,7 +105,17 @@ When the frequency of the ac source was changed to 1600hz the $\Delta\si{\volt}_
 \end{align}
 \begin{align}
     \%error&=100 * (C_{cal} - 1.00\si{\micro\farad})/1.00\si{\micro\farad}\nonumber\\
-    \%error&=100 * (0.9687\si{\micro\farrad} - 1.00\si{\micro\farad})/1.00\si{\micro\farad}\nonumber\\
+    \%error&=100 * (0.9687\si{\micro\farad} - 1.00\si{\micro\farad})/1.00\si{\micro\farad}\nonumber\\
     \%error&=3.13\%
 \end{align}
+\begin{align}
+    \Delta\si{\volt}_{Crms}&=X_{L}I_{Crms}\nonumber\\
+    I_{Crms}&=\frac{\Delta\si{\volt}_{Crms}}{X_{L}}\nonumber\\
+    I_{Crms}&=\frac{2.76\si{\volt}}{\frac{1}{2\pi*600\si{\hertz}*1.00\si{\micro\farad}}}\nonumber\\
+    I_{Crms}&=10.4\si{\milli\ampere}\label{eq:icrmscalc}
+\end{align}
+\paragraph{Discussion}\mbox{}\\
+
+I predicted that the current would go down to 10.4\si{\milli\ampere} as calculated in\eqref{eq:icrmscalc}. However, the measured I$_{Crms}$ went down to 10.1mA. A logical explanation for this would be thatI wrongly assumed the voltage would stay identical, but since I have control of the source, I dont believe that to be correct. A 3\% difference could've been explained by uncertainties in both the calculation and the measurement.
+
 \end{document}
