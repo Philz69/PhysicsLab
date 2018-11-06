@@ -35,26 +35,26 @@
 
 \subsection*{a) What is the peak voltage of the signal (include the uncertainty)?}
     \begin{gather}
-        20.0\si{\volt}\pm0.5\si{\volt}
+        (20.0\pm0.5)\si{\volt}
     \end{gather}
 
 \subsection*{b) What is the period of the signal (include the ucnertainty)?}
     \begin{gather}
-        0.100\si{\second}\pm0.005\si{\second}
+        (0.100\pm0.005)\si{\second}
     \end{gather}
 
-\subsection*{c) What is the frequnecy of the power source (include the uncertainty)?}
+\subsection*{c) What is the frequency of the power source (include the uncertainty)?}
     \begin{align}
         f&=\frac{1}{T}\nonumber\\
-         &=\frac{1}{0.100\si{\second}\pm0.005\si{\second}}\nonumber\\
-         &=10.0\si{\hertz}\pm0.5\si{\hertz}
+         &=\frac{1}{(0.100\pm0.005)\si{\second}}\nonumber\\
+         &=(10.0\pm0.5)\si{\hertz}
     \end{align}
 
 \subsection*{d) If a DMM were to be connected across the same power source, what reading would you expect (Include the uncertainty)?}
     \begin{align}
     \Delta\si{\volt}_{rms}&=\frac{\Delta\si{\volt}_{\max}}{\sqrt{2}} \nonumber\\
-    &=\frac{20.0\si{\volt}\pm0.5\si{\volt}}{\sqrt{2}}\nonumber\\
-    &=14.1\si{\volt}\pm0.7\si{\volt}
+                          &=\frac{(20.0\pm0.5)\si{\volt}}{\sqrt{2}}\nonumber\\
+                          &=(14.1\pm0.7)\si{\volt}
     \end{align}
 
 \subsection*{e) Write the sinusoidal function that represents the signal given off by the power source ( do not include the uncertainty)?}
@@ -68,8 +68,8 @@
     \begin{align}
         \Delta\si{\volt}_{\max}&=I_{\max}R\nonumber\\
         I_{\max}&=\frac{\Delta\si{\volt}_{\max}}{R}\nonumber\\
-        I_{\max}&=\frac{20.0\si{\volt}\pm0.5\si{\volt}}{( 100\pm2 )\si{\ohm}}\nonumber\\
-        I_{\max}&=200\si{\milli\ampere}\pm9\si{\milli\ampere}
+        I_{\max}&=\frac{(20.0\pm0.5)\si{\volt}}{(100\pm2)\si{\ohm}}\nonumber\\
+        I_{\max}&=(200\pm9)\si{\milli\ampere}
     \end{align}
 
 \subsection*{g) How much current passes through this resistor at $t = 0.0050\si{\second}$ (no uncertainties) }
@@ -84,8 +84,8 @@
     \begin{align}
         P_{rms}&=\Delta\si{\volt}_{rms}I_{rms}\nonumber\\
                &=\frac{\Delta\si{\volt}_{\max}}{\sqrt{2}}\frac{I_{\max}}{\sqrt{2}}\nonumber\\
-               &=\frac{20.0\si{\volt}\pm0.5\si{\volt}}{\sqrt{2}}\frac{200\si{\milli\ampere}\pm9\si{\milli\ampere}}{\sqrt{2}}\nonumber\\
-        &=3.17\si{\watt}\pm0.38\si{\watt}
+               &=\frac{(20.0\pm0.5)\si{\volt}}{\sqrt{2}}\frac{(200\pm9)\si{\milli\ampere}}{\sqrt{2}}\nonumber\\
+               &=(3.17\pm0.38)\si{\watt}
     \end{align}
 
 \subsection*{i) How much current passes through this resistor at $t = 0.025\si{\second}$ (no uncertainties) }
@@ -143,27 +143,27 @@ This lab was conceived to explore the basic concepts of AC circuits and observe 
 \section{Measurements}
 
 \begin{gather}
-    \Delta\si{\volt}_{\max}=4.0\si{\volt}\pm0.2\si{\volt}\\
-    \Delta\si{\volt}_{rms}=2.79\si{\volt}\pm0.06\si{\volt} \label{eq:vrmsmeasured}\\
-    I_{rms}=4.0\si{\volt}\pm0.2\si{\volt}\\ 
-    T=1.00\si{\milli}\si{\second}\pm0.04\si{\milli}\si{\second}
+    \Delta\si{\volt}_{\max}=(4.0\pm0.2)\si{\volt}\\
+    \Delta\si{\volt}_{rms}=(2.79\pm0.06)\si{\volt} \label{eq:vrmsmeasured}\\
+    I_{rms}=(4.0\pm0.2)\si{\volt}\\ 
+    T=(1.00\pm0.04)\si{\milli\second}
 \end{gather}
 
 \section{Calculations}
 \begin{align}
     \Delta\si{\volt}_{rms}&=\frac{\Delta\si{\volt}_{\max}}{\sqrt{2}} \nonumber\\
-    \Delta\si{\volt}_{rms}&=\frac{4.0\si{\volt}\pm0.2\si{\volt}}{\sqrt{2}}\nonumber\\
-    \Delta\si{\volt}_{rms}&=2.8\si{\volt}\pm0.1\si{\volt} \label{eq:vrmscalc}
+    \Delta\si{\volt}_{rms}&=\frac{(4.0\pm0.2)\si{\volt}}{\sqrt{2}}\nonumber\\
+    \Delta\si{\volt}_{rms}&=(2.8\pm0.1)\si{\volt} \label{eq:vrmscalc}
 \end{align}
 \begin{align}
     P_{avg}&=\Delta\si{\volt}_{rms}I_{rms}\nonumber\\
-    P_{avg}&=2.79\si{\volt}\pm0.06\si{\volt} * 4.0\si{\volt}\pm0.2\si{\volt} \nonumber\\ 
-    P_{avg}&=0.285\si{\watt}\pm0.012\si{\watt}
+    P_{avg}&=(2.79\pm0.06)\si{\volt} * (4.0\pm0.2)\si{\volt} \nonumber\\ 
+    P_{avg}&=(0.285\pm0.012)\si{\watt}
 \end{align}
 \begin{align}
     F&=\frac{1}{T} \nonumber\\
-    F &=\frac{1}{0.001 \si{\second} \pm 0.0004 \si{\second} }\nonumber\\ 
-    F &=1000\si{\hertz} \pm 40\si{\hertz} \label{eq:frequencycalc}
+    F &=\frac{1}{(0.0010\pm 0.0004) \si{\second} }\nonumber\\ 
+    F &=(1000\pm 40)\si{\hertz} \label{eq:frequencycalc}
 \end{align}
 
 \section{Discussion}
@@ -171,7 +171,7 @@ The voltage$_{rms}$ measured at~\eqref{eq:vrmsmeasured} agrees with the calculat
 The frequency calculated at~\eqref{eq:frequencycalc} agrees with the given value of 1000 \si{\hertz}\\
 When the frequency was set to 100\si{\hertz}, a time scale of 2\si{\milli}\si{\second}/div was needed for proper observation\\
 When the frequency was set to 10\si{\hertz}, a time scale of 20\si{\milli}\si{\second}/div was needed for proper observation. The sine wave shown on the oscilloscope also started flashing\\
-Since this is an ac circuit, the lamp should flash twice per period. Thus, by setting the frequency to 1 \si{\hertz} should make the lamp light up 20 times over 10 seconds. This was confirmed when tested, and the lamp does flash twice per period because there is two voltage peaks during one period.
+Since this is an ac circuit, the lamp should flash twice per period. Thus, by setting the frequency to 1 \si{\hertz} should make the lamp light up 20 times over 10 seconds. This was confirmed when tested, and the lamp does flash twice per period because there are two voltage peaks during one period.
 
 \chapter{AC circuit with an inductor}
 
@@ -191,26 +191,26 @@ Since this is an ac circuit, the lamp should flash twice per period. Thus, by se
 \subsection{Measurements}
 With F=1800Mhz
 \begin{gather}
-    \Delta\si{\volt}_{Lrms}=2.73\si{\volt}\pm0.06\si{\volt}\\ 
-    I_{rms}=23.8\si{\milli\ampere}\pm0.8\si{\milli\ampere}
+    \Delta\si{\volt}_{Lrms}=(2.73\pm0.06)\si{\volt}\\ 
+    I_{rms}=(23.8\pm0.8)\si{\milli\ampere}
 \end{gather}
 With F=1600Mhz
 \begin{gather}
-    \Delta\si{\volt}_{Lrms}=2.73\si{\volt}\pm0.06\si{\volt}\\ 
-    I_{rms}=26.4\si{\milli\ampere}\pm0.8\si{\milli\ampere}
+    \Delta\si{\volt}_{Lrms}=(2.73\pm0.06)\si{\volt}\\ 
+    I_{rms}=(26.4\pm0.8)\si{\milli\ampere}
 \end{gather}
 \subsection{Calculations}
 \begin{align}
     \Delta\si{\volt}_{Lrms}&=X_{L}I_{rms}\nonumber\\
     X_{L}&=\frac{\Delta\si{\volt}_{Lrms}}{I_{rms}}\nonumber\\
-    X_{L}&=\frac{2.73\si{\volt}\pm0.06\si{\volt}}{23.8\si{\milli\ampere}\pm0.8\si{\milli\ampere}}\nonumber\\
-    X_{L}&=11.47\frac{\si{\volt}}{\si{\ampere}} \pm 0.29 \frac{\si{\volt}}{\si{\ampere}} \label{eq:xlcalc}
+    X_{L}&=\frac{(2.73\pm0.06)\si{\volt}}{(23.8\pm0.8)\si{\milli\ampere}}\nonumber\\
+    X_{L}&=(11.47\pm 0.29)\frac{\si{\volt}}{\si{\ampere}} \label{eq:xlcalc}
 \end{align}
 \begin{align}
     X_{L}&=\omega L\nonumber\\
     L&=\frac{X_{L}}{\omega}\nonumber\\
-    L&=\frac{114.7\frac{\si{\volt}}{\si{\ampere}} \pm 0.3 \frac{\si{\volt}}{\si{\ampere}}}{2\pi1800\si{\hertz}} \nonumber\\
-    L&=10.14\si{\milli}\si{\henry} \pm 0.26\si{\milli}\si{\henry}\label{eq:lcalc}
+    L&=\frac{(114.7\pm 0.3)\frac{\si{\volt}}{\si{\ampere}}}{2\pi1800\si{\hertz}} \nonumber\\
+    L&=(10.14 \pm 0.26)\si{\milli}\si{\henry}\label{eq:lcalc}
 \end{align}
 \subsection{Discussion}
 The value of L calulated at~\eqref{eq:lcalc} agrees with the nomival value of 10$\si{\milli}\si{\henry}\pm1\si{\milli}\si{\henry}$\\
@@ -226,7 +226,7 @@ When the frequency of the ac source was changed to 1600hz the $\Delta\si{\volt}_
     \item Calculate $X_{C}$ using these measurements (ignore uncertainties).
     \item Use the calculated $X_{C}$ to determine C (ignore uncertainties).
     \item Calculate the percent error on C.
-    \item Predit the value of $I_{Crms}$ when the frequency of the 
+    \item Predit the value of $I_{Crms}$ when the frequency of the power source is $600\si{\hertz}$ 
 \end{itemize}
 
 \section{Measurements}
@@ -265,6 +265,6 @@ When the frequency of the ac source was changed to 1600hz the $\Delta\si{\volt}_
 
 \section{Discussion}
 
-I predicted that the current would go down to 10.4\si{\milli\ampere} as calculated in\eqref{eq:icrmscalc}. However, the measured I$_{Crms}$ went down to 10.1mA. A logical explanation for this would be thatI wrongly assumed the voltage would stay identical, but since I have control of the source, I dont believe that to be correct. A 3\% difference could've been explained by uncertainties in both the calculation and the measurement.
+I predicted that the current would go down to 10.4\si{\milli\ampere} as calculated in\eqref{eq:icrmscalc}. However, the measured I$_{Crms}$ went down to 10.1mA. A logical explanation for this would be that I wrongly assumed the voltage would stay identical, but since I have control of the source, I dont believe that to be correct. A 3\% difference could've been explained by uncertainties in both the calculation and the measurement.
 
 \end{document}
