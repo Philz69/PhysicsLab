@@ -1,0 +1,166 @@
+\documentclass{report}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{titlesec}[rubberchapters]
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\makeatletter
+\patchcmd{\chapter}{\clearpage}{}{}{}
+\makeatother
+\everymath{\displaystyle}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\pgfplotsset{width=10cm,compat=1.9}
+\begin{document}
+%\begin{titlepage}
+%    \centering
+%    203-NYB-05\\
+%    Electricity and Magnetism\\
+%    Professor: Ernest Dubeau\par
+%    \vspace{5cm}
+%    \Large AC Circuits: Lab 1\par
+%    \normalsize
+%    By:\\
+%    Philipe Goulet\\
+%    \vspace*{\fill}
+%    {\today}\\
+%    Departement of Physics\\
+%    Champlain Regional College\\
+%    Lennoxville, Quebec, Canada
+%\end{titlepage}
+\section*{Theory}
+
+While $g$ ( acceleation of gravity ) is often considered as a constant, it changes with altitude. This is because the force of gravity that acts upon any two objects is given by Newton’s law of universal gravitation:
+\begin{gather}
+    F=G\frac{m_1m_2}{r}
+\end{gather}
+Where $G$ is the gravitational constant, $r$ is the distance between center of mass of both objects, $m1$ is the mass of object 1 and $m2$ is the mass of object 2\\
+
+However, because earth is not a perfect sphere, r varies depending on altitude. This means that $g$ as mesaured in J-18 will be slightly different from the given value of $9.8 N/kg$. Since measuring the distance between the center of mass and the earth precisely is not something that can be easily done, we have to rely on another method.\\ 
+
+Since the period of a pendulum $T$ only depend on its length $L$  and $g$, we can use it to find $g$ at our location.
+
+\begin{gather}
+    T=2\pi\sqrt{\frac{L}{g}}
+\end{gather}
+
+\noindent\textcolor{red}{\rule{10cm}{1mm}}
+
+We will be using a Kater’s pendulum because ( I THINK IT IS BECAUSE IT ALLOWS MORE PRECISE MEASUREMENTS ). It is a pendulum with two masses that can be shifted along the length of the pendulum and two fixed pivot points.
+
+When oscillating around Point A, the torque that pushes the pendulum back to its original position is given by:
+
+\begin{equation}\tau=|\vec{ R } x \vec{ F }| = Mgasin\left(\theta\right)\end{equation}
+
+Since clockwise rotation is a negative torque by convention, the restoring force is a negative toque.
+
+\begin{equation}
+    \tau=-Mgasin\left(\theta\right)
+\end{equation}
+
+Torque is also given by 
+
+\begin{gather*}
+    \tau=I\alpha \\
+    \alpha=\frac{d\omega}{dt}=\frac{d}{dt}\frac{d\theta}{dt}=\frac{d^2\theta}{dt^2}\\
+    \tau=\frac{d^2\theta}{dt^2}
+\end{gather*}
+
+Paralel axis theorm bla bla
+
+\begin{equation}
+    I_a=I_cm + Ma^2 = M(k^2+a^2)
+\end{equation}
+
+Where $I_cm = Mk^2$,$k$ defines the radius of gyration about the center of mass. Using Newton's second law, the second order differential equation for the angular displacement can be written as:
+
+\begin{equation}
+    I_a\frac{d^2\theta}{dt^2}=-Mgasin\left(\theta\right) \label{eq:angulardisp}
+\end{equation}
+
+%τ=|R x F| = Mgasin(theta)
+
+\noindent\textcolor{red}{\rule{10cm}{1mm}}
+
+By solving Eq. (\ref{eq:angulardisp}) for $T$ ( in this case the period of oscillation with pivot point a ) give us:
+
+\begin{align}
+    T_a&=2\pi \sqrt{\frac{I_a}{Mga}}\nonumber\\
+    T_a&=2\pi \sqrt{\frac{M(k^2+a^2)}{ Mga }}\nonumber\\
+    T_a&=2\pi \sqrt{\frac{k^2+a^2}{ga}} \label{eq:perioda}
+\end{align}
+Doing the same with pivot point B gives us:
+\begin{gather}
+    T_b=2\pi \sqrt{\frac{k^2+b^2}{gb}}\label{eq:periodb}
+\end{gather}
+
+When $T_a = T_b$:  
+\begin{align*}
+    2\pi \sqrt{\frac{k^2+a^2}{ga}}&=2\pi \sqrt{\frac{k^2+b^2}{gb}}\\
+    \frac{k^2+a^2}{ ga }&= \frac{ k^2+b^2 }{ ga }\\
+    \frac{ k^2+a^2 }{ ga }&= \frac{ k^2+b^2 }{ gb }\\
+    \frac{ k^2+a^2 }{ a }&= \frac{ k^2+b^2 }{ b }\\
+    (k^2+a^2)b &=(k^2+b^2)a \\
+    (k^2+a^2)b-(k^2+b^2)a &= 0\\
+    a^2b-(k^2+b^2)a + k2b &=0
+\end{align*}
+
+The above is an equation of the form $ax^2+bx+c$, thus we apply the quadratic formula
+\begin{gather*}
+    a= \frac{\left(k^2+b^2\right)\pm \sqrt{\left(-\left(k^2+b^2\right)\right)^2-4bk^2b}}{2b}\\
+    a= \frac{\left(k^2+b^2\right)\pm \left(k+b\right)\left(k-b\right)}{ 2b }
+\end{gather*}
+\begin{equation}
+    \begin{split}
+        a_1 &= \frac{ (k^2+b^2)+ (k+b)(k-b) }{2b}\\
+        a_1 &= \frac{ k^2+b^2+k2+kb-kb-b^2 }{2b} \\
+        a_1 &= \frac{2k^2}{2b}\\
+        a_1 &= \frac{k^2}{b}\\
+        ab &= k^2 \label{eq:solve1} 
+    \end{split}
+    \qquad
+    \begin{split}
+        a_2 &= \frac{ (k^2+b^2)- (k+b)(k-b) }{ 2b } \\
+        a_2 &= \frac{ k^2+b^2-k2-kb+kb+b^2 }{ 2b }   \\
+        a_2 &= \frac{ 2b^2} { 2b }                    \\
+        a_2 &= \frac{b^2}{ b }                      \\
+        a &=b                          
+    \end{split}
+\end{equation}
+
+By using $ab=k^2$ obtained in Eq. (\ref{eq:solve1}) to replace $k^2$ in \ref{eq:perioda} and \ref{eq:periodb} 
+
+\begin{equation}
+    \begin{aligned}
+        T_a&=T_b \\
+        2\pi \sqrt{\frac{k^2+a^2}{ga}} &=2\pi \sqrt{\frac{k^2+b^2}{gb}} \\
+        2\pi \sqrt{\frac{ab+a^2}{ga}} &=2\pi \sqrt{\frac{ab+b^2}{gb}} \\
+        2\pi \sqrt{\frac{a\left(a+b\right)}{ga}} &=2\pi \sqrt{\frac{b\left(a+b\right)}{gb}} \\
+        2\pi \sqrt{\frac{\left(a+b\right)}{g}} &=2\pi \sqrt{\frac{\left(a+b\right)}{g}} \\
+        T&=2\pi \sqrt{\frac{a+b}{ g }} \label{eq:periodab}
+    \end{aligned}
+\end{equation}
+
+
+We then solve the Eq. (\ref{eq:periodab}) for $g$
+
+\begin{equation}
+    \begin{aligned}
+        T&=2\pi \sqrt{\frac{a+b}{ g }} \\
+        T^2&=4\pi^2 \frac{a+b}{ g } \\
+        g&=4\pi^2\frac{ a+b }{ T^2 }
+    \end{aligned}
+\end{equation}
+
+$a+b$ being the distance between the fixed pivot points, which is given in this case as being $a+b=100.06cm$
+Using the final derived equation, we will be able to easily calculate g at our location just by setting up the masses on the pendulum in such a way that Ta and Tb are equal and then using that period in the equation
+
+
+
+\end{document}
