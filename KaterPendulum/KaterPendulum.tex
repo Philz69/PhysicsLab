@@ -42,17 +42,15 @@ While $g$ ( acceleation of gravity ) is often considered as a constant, it chang
 \end{gather}
 Where $G$ is the gravitational constant, $r$ is the distance between center of mass of both objects, $m1$ is the mass of object 1 and $m2$ is the mass of object 2\\
 
-However, because earth is not a perfect sphere, r varies depending on altitude. This means that $g$ as mesaured in J-18 will be slightly different from the given value of $9.8 N/kg$. Since measuring the distance between the center of mass and the earth precisely is not something that can be easily done, we have to rely on another method.\\ 
+However, because earth is not a perfect sphere, r varies depending on altitude. This means that $g$ as mesaured in J-18 will be slightly different from the given value of $9.8 N/kg$. Since measuring the distance between the center of mass and the earth precisely is not something that can be easily done, another method has to be used.\\ 
 
-Since the period of a pendulum $T$ only depend on its length $L$  and $g$, we can use it to find $g$ at our location.
+Since the period of a pendulum $T$ only depend on its length $L$  and $g$, it can be used to find $g$ at any location.
 
 \begin{gather}
-    T=2\pi\sqrt{\frac{L}{g}}
+    T=2\pi\sqrt{\frac{L}{g}} \label{eq:simplependulum}
 \end{gather}
 
-\noindent\textcolor{red}{\rule{10cm}{1mm}}
-
-We will be using a Kater’s pendulum because ( I THINK IT IS BECAUSE IT ALLOWS MORE PRECISE MEASUREMENTS ). It is a pendulum with two masses that can be shifted along the length of the pendulum and two fixed pivot points.
+Since a massless rope does not exist in real life, it is not possible really make a simple pendulum, and thus one can not simply use Eq (\ref{eq:simplependulum}). Using a Kater’s pendulum because it allows us to calculate gravity without finding the center of mass and center of oscillation. It is a pendulum with two masses that can be shifted along the length of the pendulum and two fixed pivot points. Finding the equation for the angular displacement, solving it to find the period andeliminating variables with clever algebra yields a simple formula.
 
 When oscillating around Point A, the torque that pushes the pendulum back to its original position is given by:
 
@@ -64,31 +62,31 @@ Since clockwise rotation is a negative torque by convention, the restoring force
     \tau=-Mgasin\left(\theta\right)
 \end{equation}
 
-Torque is also given by 
+Defining $\tau$ in function of inertia $I_a$, time $t$ and the angle $\theta$ using a different equation.
 
 \begin{gather*}
     \tau=I\alpha \\
     \alpha=\frac{d\omega}{dt}=\frac{d}{dt}\frac{d\theta}{dt}=\frac{d^2\theta}{dt^2}\\
-    \tau=\frac{d^2\theta}{dt^2}
+    \tau=I_a\frac{d^2\theta}{dt^2} \label{eq:torque1}
 \end{gather*}
 
-Paralel axis theorm bla bla
+Using the parallel axis theorem to define $I_a$ in terms of the moment of inertia about the center of mass $I_cm$.
 
 \begin{equation}
-    I_a=I_cm + Ma^2 = M(k^2+a^2)
+    \begin{aligned}
+        I_a&=I_cm + Ma^2\\ 
+        I_a&=Mk^2 + Ma^2\\ 
+        I_a&= M(k^2+a^2) \label{eq:torque2}
+    \end{aligned}
 \end{equation}
 
-Where $I_cm = Mk^2$,$k$ defines the radius of gyration about the center of mass. Using Newton's second law, the second order differential equation for the angular displacement can be written as:
+Where $I_cm = Mk^2$,$k$ defines the radius of gyration about the center of mass, which is the distance from the axis of rotation the mass of the body would be if it was concentrated in a single point while keeping the same moment of inertia. Since Eq. (\ref{eq:torque1}) and Eq. (\ref{eq:torque2}) both represent torque, they are equal. Thus:
 
 \begin{equation}
-    I_a\frac{d^2\theta}{dt^2}=-Mgasin\left(\theta\right) \label{eq:angulardisp}
+        I_a\frac{d^2\theta}{dt^2}=-Mgasin\left(\theta\right) \label{eq:angulardisp}
 \end{equation}
 
-%τ=|R x F| = Mgasin(theta)
-
-\noindent\textcolor{red}{\rule{10cm}{1mm}}
-
-By solving Eq. (\ref{eq:angulardisp}) for $T$ ( in this case the period of oscillation with pivot point a ) give us:
+Solving Eq. (\ref{eq:angulardisp}) for $T$ ( in this case the period of oscillation with pivot point a ) give us:
 
 \begin{align}
     T_a&=2\pi \sqrt{\frac{I_a}{Mga}}\nonumber\\
@@ -111,7 +109,7 @@ When $T_a = T_b$:
     a^2b-(k^2+b^2)a + k2b &=0
 \end{align*}
 
-The above is an equation of the form $ax^2+bx+c$, thus we apply the quadratic formula
+The above is an equation of the form $ax^2+bx+c$, thus, apply the quadratic formula
 \begin{gather*}
     a= \frac{\left(k^2+b^2\right)\pm \sqrt{\left(-\left(k^2+b^2\right)\right)^2-4bk^2b}}{2b}\\
     a= \frac{\left(k^2+b^2\right)\pm \left(k+b\right)\left(k-b\right)}{ 2b }
@@ -159,7 +157,6 @@ We then solve the Eq. (\ref{eq:periodab}) for $g$
 \end{equation}
 
 $a+b$ being the distance between the fixed pivot points, which is given in this case as being $a+b=100.06cm$
-Using the final derived equation, we will be able to easily calculate g at our location just by setting up the masses on the pendulum in such a way that Ta and Tb are equal and then using that period in the equation
 
 
 

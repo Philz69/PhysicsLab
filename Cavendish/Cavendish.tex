@@ -1,0 +1,126 @@
+\documentclass{report}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{titlesec}[rubberchapters]
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\makeatletter
+\patchcmd{\chapter}{\clearpage}{}{}{}
+\makeatother
+\everymath{\displaystyle}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\pgfplotsset{width=10cm,compat=1.9}
+\begin{document}
+%\begin{titlepage}
+%    \centering
+%    203-NYB-05\\
+%    Electricity and Magnetism\\
+%    Professor: Ernest Dubeau\par
+%    \vspace{5cm}
+%    \Large AC Circuits: Lab 1\par
+%    \normalsize
+%    By:\\
+%    Philipe Goulet\\
+%    \vspace*{\fill}
+%    {\today}\\
+%    Departement of Physics\\
+%    Champlain Regional College\\
+%    Lennoxville, Quebec, Canada
+%\end{titlepage}
+\section*{Theory}
+
+Any two objects $M$ and $m$ attract each other by gravity by the universal law of gravitation:
+
+\begin{equation}
+    F=G\frac{Mm}{R^2}
+\end{equation}
+
+Where $R$ is the distance between the two objects and $F$ is the force between the two objects.
+
+By setting up a hanging mass $m$ on a torsion string and then placing a larger mass $M$ close to it,$m$ will be attracted to $M$ and this force will bring them closer, and the force of the torsion string will separate them back. This creates a torsion pendulum. By using the formula for the period of the torsion pendulum, the moment of inertia, the torsion constant and torque, we can isolate $G$ from the formula and calculate it.
+
+
+We will start with the formula for the period of a torsion pendulum.
+
+\begin{equation}
+    T=2\pi\sqrt{\frac{I}{\kappa}} \label{eq:torsion}
+\end{equation}
+
+Where $I = 2md^2$ (where $d$ is half the distance between the balls) is the moment of inertia of the system, and $\kappa$ is the torsion constant of the string. We then solve Eq (\ref{eq:torsion}) for $\kappa$:
+
+\begin{equation}
+    \begin{aligned}
+        T&=2\pi\sqrt{\frac{I}{\kappa}}\\ 
+        T^2&=\frac{4\pi^2I}{\kappa}\\ 
+        \kappa&=\frac{4\pi^2I}{T^2}\\ 
+        \kappa&=\frac{8\pi^2md^2}{T^2} \label{eq:kappa} 
+    \end{aligned}
+\end{equation}
+
+We will be using a mirror attached to the string and a laser to measure the delfection of the system. With $\theta$ being the angle between the points of maximum deflection, $\frac{\theta}{2}$, which is the angle between zero deflection and maximum deflection, represents the point where the torque of gravity is in equilibrium with the torque of the string. 
+
+\newpage
+The torque at this point is given by the following torque formula. We then replace $\kappa$ by its extended form in Eq (\ref{eq:kappa}).
+
+\begin{align}
+    T&=\kappa\frac{\theta}{2}\nonumber\\ 
+    T&=\frac{8\pi^2md^2}{T^2}  \frac{\theta}{2} \nonumber\\
+    T&=\frac{4\pi^2md^2\theta}{T^2} \label{eq:torque}
+\end{align}
+
+The general formula of torque is given by:
+
+\begin{equation}
+    \begin{aligned}
+        \vec{\tau}&= \vec{r} x \vec{F}\\
+        \tau&=rF \sin{\ang{90}}\\
+        \tau&=rF
+    \end{aligned}
+\end{equation}
+
+Since $r = d$ and $F$, the total force on the system is double because we have to balls acting on either side:
+
+
+\begin{align}
+    \tau&=d2F\nonumber\\ 
+    F&=G\frac{Mm}{R^2}\nonumber\\
+    \tau&=d2G\frac{Mm}{R^2} \label {eq:torque2}
+\end{align}
+
+We can then equate Eq (\ref{eq:torque}) and Eq (\ref{eq:torque2}) and isolate G.
+
+
+\begin{equation}
+    \begin{aligned}
+        \frac{4\pi^2md^2\theta}{T^2}&=d2G\frac{Mm}{R^2}\\
+        G&=\frac{4\pi^2md^2\theta R^2}{Mmd2T^2}\\
+        G&=\frac{2\pi^2md\theta R^2}{MT^2}\label{eq:gtheta}
+    \end{aligned}
+\end{equation}
+
+Because we cant really measure the angle of the torsion string or the mass without disturbing the system, we measure that angle using the laser. However, since the laser is reflected off of a mirror, the angle we will measure will be equal to $2\theta$. We measure length from the mirror to the wall$L$ and the length between the center point and one extreme $S$ and use it in the following formula:
+
+\begin{equation}
+    2\theta = \frac{S}{L}
+\end{equation}
+
+We can then replace $2\theta$ in Eq (\ref{eq:gtheta})
+
+\begin{equation}
+    \begin{aligned}
+        G&=\frac{2\pi^2md\theta R^2}{MT^2}\\
+        G&=\frac{\pi^2mdR^2}{MT^2} 2\theta\\
+        G&=\frac{\pi^2mdR^2}{MT^2}  \frac{S}{L}\\
+        G&=\frac{\pi^2mdR^2S}{MT^2L}
+    \end{aligned}
+\end{equation}
+
+Where $M = 1.48kg$, $d = 0.0500m$, $R = 0.0465m$ for our apparatus.
+\end{document}
