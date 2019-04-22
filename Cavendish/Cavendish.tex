@@ -1,4 +1,5 @@
-\documentclass{report}
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
 \usepackage{mathtools}
 \usepackage{etoolbox}
 \usepackage{amsmath}
@@ -9,6 +10,7 @@
 \usepackage{titlesec}[rubberchapters]
 \usepackage{enumitem}
 \usepackage{pgfplots}
+\usepackage[flushleft]{threeparttable}
 \makeatletter
 \patchcmd{\chapter}{\clearpage}{}{}{}
 \makeatother
@@ -34,93 +36,177 @@
 %    Champlain Regional College\\
 %    Lennoxville, Quebec, Canada
 %\end{titlepage}
-\section*{Theory}
+\begin{center}
+    \large\textbf{Cavendish Experiment}\\
+\normalsize \textit{Experiment \#9}\\
+    By Damien Bérubé, Philipe Goulet and Aaron MacLaod
+\end{center}
+ \section*{Theory}
 
-Any two objects $M$ and $m$ attract each other by gravity by the universal law of gravitation:
+    Any two objects $M$ and $m$ attract each other by gravity by the universal law of gravitation:
 
-\begin{equation}
-    F=G\frac{Mm}{R^2}
-\end{equation}
+    \begin{equation}
+        F=G\frac{Mm}{R^2}
+    \end{equation}
 
-Where $R$ is the distance between the two objects and $F$ is the force between the two objects.
+    Where $R$ is the distance between the two objects and $F$ is the force between the two objects.
 
-By setting up a hanging mass $m$ on a torsion string and then placing a larger mass $M$ close to it,$m$ will be attracted to $M$ and this force will bring them closer, and the force of the torsion string will separate them back. This creates a torsion pendulum. By using the formula for the period of the torsion pendulum, the moment of inertia, the torsion constant and torque, we can isolate $G$ from the formula and calculate it.
-
-
-We will start with the formula for the period of a torsion pendulum.
-
-\begin{equation}
-    T=2\pi\sqrt{\frac{I}{\kappa}} \label{eq:torsion}
-\end{equation}
-
-Where $I = 2md^2$ (where $d$ is half the distance between the balls) is the moment of inertia of the system, and $\kappa$ is the torsion constant of the string. We then solve Eq (\ref{eq:torsion}) for $\kappa$:
-
-\begin{equation}
-    \begin{aligned}
-        T&=2\pi\sqrt{\frac{I}{\kappa}}\\ 
-        T^2&=\frac{4\pi^2I}{\kappa}\\ 
-        \kappa&=\frac{4\pi^2I}{T^2}\\ 
-        \kappa&=\frac{8\pi^2md^2}{T^2} \label{eq:kappa} 
-    \end{aligned}
-\end{equation}
-
-We will be using a mirror attached to the string and a laser to measure the delfection of the system. With $\theta$ being the angle between the points of maximum deflection, $\frac{\theta}{2}$, which is the angle between zero deflection and maximum deflection, represents the point where the torque of gravity is in equilibrium with the torque of the string. 
-
-\newpage
-The torque at this point is given by the following torque formula. We then replace $\kappa$ by its extended form in Eq (\ref{eq:kappa}).
-
-\begin{align}
-    T&=\kappa\frac{\theta}{2}\nonumber\\ 
-    T&=\frac{8\pi^2md^2}{T^2}  \frac{\theta}{2} \nonumber\\
-    T&=\frac{4\pi^2md^2\theta}{T^2} \label{eq:torque}
-\end{align}
-
-The general formula of torque is given by:
-
-\begin{equation}
-    \begin{aligned}
-        \vec{\tau}&= \vec{r} x \vec{F}\\
-        \tau&=rF \sin{\ang{90}}\\
-        \tau&=rF
-    \end{aligned}
-\end{equation}
-
-Since $r = d$ and $F$, the total force on the system is double because we have to balls acting on either side:
+    When setting a hanging mass $m$ on a torsion string and placing a larger mass $M$ close to it, gravity will force them closer while the torsion string will force them appart, creating a torsion pendulum. By using the formula for the period of the torsion pendulum, the moment of inertia, the torsion constant and torque, Combining the formulas of the period of the torsion pendulum, the moment of inertia, the torsion constant and the torque gives an equation where G can be isolated.
 
 
-\begin{align}
-    \tau&=d2F\nonumber\\ 
-    F&=G\frac{Mm}{R^2}\nonumber\\
-    \tau&=d2G\frac{Mm}{R^2} \label {eq:torque2}
-\end{align}
+    Starting with the formula for the period of a torsion pendulum:
 
-We can then equate Eq (\ref{eq:torque}) and Eq (\ref{eq:torque2}) and isolate G.
+    \begin{equation}
+        T=2\pi\sqrt{\frac{I}{\kappa}} \label{eq:torsion}
+    \end{equation}
+
+    Where $I = 2md^2$ (where $d$ is half the distance between the balls) is the moment of inertia of the system, and $\kappa$ is the torsion constant of the string. Solving Eq (\ref{eq:torsion}) for $\kappa$:
+
+    \begin{equation}
+        \begin{aligned}
+            T&=2\pi\sqrt{\frac{I}{\kappa}}\\ 
+            T^2&=\frac{4\pi^2I}{\kappa}\\ 
+            \kappa&=\frac{4\pi^2I}{T^2}\\ 
+            \kappa&=\frac{8\pi^2md^2}{T^2} \label{eq:kappa} 
+        \end{aligned}
+    \end{equation}
+
+    With $\theta$ being the angle between the points of maximum deflection, $\frac{\theta}{2}$, which is the angle between zero deflection and maximum deflection, represents the point where the torque of gravity is in equilibrium with the torque of the string. 
+
+    The torque at this point is given by the following torque formula. Replacing $\kappa$ by its extended form in Eq (\ref{eq:kappa}):
+
+    \begin{align}
+        T&=\kappa\frac{\theta}{2}\nonumber\\ 
+        T&=\frac{8\pi^2md^2}{T^2}  \frac{\theta}{2} \nonumber\\
+        T&=\frac{4\pi^2md^2\theta}{T^2} \label{eq:torque}
+    \end{align}
+
+    The general formula of torque is given by:
+
+    \begin{equation}
+        \begin{aligned}
+            \vec{\tau}&= \vec{r} x \vec{F}\\
+            \tau&=rF \sin{\ang{90}}\\
+            \tau&=rF
+        \end{aligned}
+    \end{equation}
+
+    $F$ is the formula for the force of only one $M$ acting on $m$. Since there are two $M$ and $r = d$:
+
+    \begin{align}
+        \tau&=d2F\nonumber\\ 
+        F&=G\frac{Mm}{R^2}\nonumber\\
+        \tau&=d2G\frac{Mm}{R^2} \label {eq:torque2}
+    \end{align}
+
+    Eq (\ref{eq:torque}) and Eq (\ref{eq:torque2}) being equal, G can be isolated:
 
 
-\begin{equation}
-    \begin{aligned}
-        \frac{4\pi^2md^2\theta}{T^2}&=d2G\frac{Mm}{R^2}\\
-        G&=\frac{4\pi^2md^2\theta R^2}{Mmd2T^2}\\
-        G&=\frac{2\pi^2md\theta R^2}{MT^2}\label{eq:gtheta}
-    \end{aligned}
-\end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \frac{4\pi^2md^2\theta}{T^2}&=d2G\frac{Mm}{R^2}\\
+            G&=\frac{4\pi^2md^2\theta R^2}{Mmd2T^2}\\
+            G&=\frac{2\pi^2md\theta R^2}{MT^2}\label{eq:gtheta}
+        \end{aligned}
+    \end{equation}
 
-Because we cant really measure the angle of the torsion string or the mass without disturbing the system, we measure that angle using the laser. However, since the laser is reflected off of a mirror, the angle we will measure will be equal to $2\theta$. We measure length from the mirror to the wall$L$ and the length between the center point and one extreme $S$ and use it in the following formula:
+    Measuring $theta$ being impossible in practice, it is obtained from $S$ and $L$; Where $S$ is distance between zero deflection and maximum deflection measured at the wall and $L$ is the distance between the mirror and the wall. However, since $S$ and $L$ are measured using a laser reflecting off a mirror, the following equation is used:
 
-\begin{equation}
-    2\theta = \frac{S}{L}
-\end{equation}
+    \begin{equation}
+        2\theta = \frac{S}{L}
+    \end{equation}
 
-We can then replace $2\theta$ in Eq (\ref{eq:gtheta})
+    Replacing $2\theta$ in Eq (\ref{eq:gtheta}):
 
-\begin{equation}
-    \begin{aligned}
-        G&=\frac{2\pi^2md\theta R^2}{MT^2}\\
-        G&=\frac{\pi^2mdR^2}{MT^2} 2\theta\\
-        G&=\frac{\pi^2mdR^2}{MT^2}  \frac{S}{L}\\
-        G&=\frac{\pi^2mdR^2S}{MT^2L}
-    \end{aligned}
-\end{equation}
+    \begin{equation}
+        \begin{aligned}
+            G&=\frac{2\pi^2md\theta R^2}{MT^2}\\
+            G&=\frac{\pi^2mdR^2}{MT^2} 2\theta\\
+            G&=\frac{\pi^2mdR^2}{MT^2}  \frac{S}{L}\\
+            G&=\frac{\pi^2mdR^2S}{MT^2L} \label{eq:final}
+        \end{aligned}
+    \end{equation}
 
-Where $M = 1.48kg$, $d = 0.0500m$, $R = 0.0465m$ for our apparatus.
-\end{document}
+    Where $M = 1.48kg$, $d = 0.0500m$, $R = 0.0465m$ for our apparatus.
+
+\section*{Procedure}
+
+To set up for the Cavendish experiment, the first thing we did was to make sure that the gravitational torsion balance was at rest. We then aligned the laser in such a way that it reflected off the mirror onto the wall on the other side of the room. Doing so, we had to be really careful not to bump neither the table nor the apparatus—the vibration would alter the state of rest.
+
+We taped a strip of millimeter gridline paper to the wall so that the laser spot was at one end of it. Afterwards, we set up a camera to film the motion of the laser spot. To start the experiment, we marked the initial position of the laser spot, turned the camera on and very carefully move the big balls on the apparatus to the other side. Once everything was going, we just waited until the laser spot had stopped moving; the equilibrium point reached, we stopped the recording and turned the laser off.
+
+Using the video, we analysed it, counting the period of each oscillation and the distance between the highest amplitude (the starting point of the laser) and the middle (distance S), where it stabilised (in Table \ref{tab:time}). From Table \ref{tab:period}, we found an averaged period of $(306 \pm 10) s$, while the value of S turned out to be $(0.085 \pm 0.005) m$.
+
+\begin{center}
+    \begin{threeparttable}\label{tab:time}
+        \begin{tabular}{| c | c | c |}
+            \hline
+                & $x (mm)$ & $t (s)$\\ \hline
+        $\pm$   & $5$ & $5$ \\ \hline 
+        $min_1$ & 0   & 0    \\ \hline 
+        $max_1$ & 155 & 156  \\ \hline 
+        $min_2$ & 25  & 318  \\ \hline 
+        $max_2$ & 150 & 424  \\ \hline 
+        $min_3$ & 40  & 624  \\ \hline 
+        $max_3$ & 135 & 768  \\ \hline 
+        $min_4$ & 65  & 924  \\ \hline 
+        $max_4$ & 125 & 1068 \\ \hline 
+    \end{tabular}
+
+    \begin{tablenotes}
+    \end{tablenotes}
+\item \footnotesize \textbf{Table 1} Column one contains the position $(x)$ of the laser beam spot at each of its maximums and minimums measured from its starting position. Column two contains the time $(t)$ that has elapsed form the beginning of the recording and corresponding to maximum and minimum positions. 
+\end{threeparttable}
+\end{center}
+
+\begin{center}
+    \begin{threeparttable}\label{tab:period}
+
+        \begin{tabular}{|c|c|c|}
+            \hline
+     & $t$ (s) & $T$(s)\\ \hline 
+            $\pm$ & $5$ & $10$ \\ \hline
+            $min_2 - min_1$ &0 - 318 & 318 \\ \hline 
+            $max_2 - max_1$ &424 - 156 & 268 \\ \hline
+            $min_3 - min_2$ &624 - 318 & 306 \\ \hline
+            $max_3 - max_2$ &768 - 424 & 344 \\ \hline
+            $min_4 - min_3$ &924 - 624 & 300 \\ \hline
+            $max_4 - max_3$ &1068 - 768 & 300 \\ \hline
+            Avg& & 306 \\ \hline
+        \end{tabular}
+        \begin{tablenotes}
+        \item \footnotesize \textbf{Table 2} In the right column we found the period $(T)$, which was calculated by substracting the time at the second minimum by the time at the first minimum, then the third minimum minus the second; etc.; and the same for the CANT SEE THIS IN PDF 
+        \end{tablenotes}
+    \end{threeparttable}
+\end{center}
+
+Finally, the big masses $(M)$ were 1.507 kg; the distance $(R)$ separating their center from the center the small masses was 0.0515 m; the distance $(d)$ between the small masses the center of the rod connecting them was 0.0500 m; and the distance $(L)$ from the apparatus to the screen was $(12.18 \pm 0.02)$m. With all these values, we were able to compute the gravitational constant $G$; we got an empirical value of $(6.5 \times 10^{-11} \pm 0.8 \times 10^{-11}) \si{m^3kg^{-1}s^{-2}}$.
+
+
+
+
+
+
+
+\section*{Discussion \& Conclusion}
+
+The value we found experimentally for G $(6.5 \times 10^{-11}\pm 0.8 \times 10^{-11})\frac{\si{m^3}}{\si{kgs^2}}$, agrees with the given value of $6.674 \time 10^{-11}\frac{\si{m^3}}{\si{kgs^2}}$. However, this is likely due to our large uncertainty of $12.664 \%$. It is almost certain vibrations had an effect on our measurements; since we did not use a device to actively reduce vibrations ( such as an anti-vibration table, like used in the hologram experiment ), it is almost certain the vibrations of the ventilation, the people walking above the class or in the corridor reached the apparatus, this could've affected the period of the torsion pendulum. Since the main source of uncertainty was the period, this is likely to be a source of error.
+
+    \section*{Calculations}
+    Using Eq (\ref{eq:final}) and all the measurements taken, we get:
+    \begin{equation*}
+        \begin{aligned}
+            G&=\frac{\pi^2mdR^2S}{MT^2L}\\
+            G&=\frac{\pi^2(0.050m)(0.0515m)^2(0.085\si{m} \pm 0.005\si{m})}{(1.507kg)(306\si{s} \pm 10\si{s})^2(12.18\si{m} \pm 0.03 \si{m})}\\
+            G&=6.4729 \times 10^{-11}\frac{\si{m^3}}{\si{s^2kg}}\pm 12.664\% \\
+            G&=(6.4729 \times 10^{-11}\pm 0.81977 \times 10^{-11})\frac{\si{m^3}}{\si{kgs^2}}\\
+            G&=(6.5 \times 10^{-11}\pm 0.8 \times 10^{-11})\frac{\si{m^3}}{\si{kgs^2}}( or \frac{\si{Nm^2}}{\si{kg^2}} )\\
+        \end{aligned}
+    \end{equation*}
+
+
+
+   \end{document}
+
+
+

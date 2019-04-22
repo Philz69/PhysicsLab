@@ -1,14 +1,16 @@
-\documentclass{report}
+\documentclass[12pt]{article}
 \usepackage{mathtools}
 \usepackage{etoolbox}
 \usepackage{amsmath}
 \usepackage{siunitx}
-\usepackage{tikz}
-\usetikzlibrary{datavisualization}
-\usetikzlibrary{datavisualization.formats.functions}
 \usepackage{titlesec}[rubberchapters]
 \usepackage{enumitem}
+\usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage[flushleft]{threeparttable}
+\usepackage[margin=1in]{geometry}
+\usepackage{caption}
 \makeatletter
 \patchcmd{\chapter}{\clearpage}{}{}{}
 \makeatother
@@ -34,15 +36,23 @@
 %    Champlain Regional College\\
 %    Lennoxville, Quebec, Canada
 %\end{titlepage}
+\title{Kater's Pendulum}
+\begin{center}
+    \large\textbf{Kater's Pendulum}\\
+    \normalsize \textit{Experiment \#8}\\
+    By Damien Bérubé, Philipe Goulet and Aaron MacLaod
+\end{center}
+
+
 \section*{Theory}
 
-While $g$ ( acceleation of gravity ) is often considered as a constant, it changes with altitude. This is because the force of gravity that acts upon any two objects is given by Newton’s law of universal gravitation:
+While $g$ ( amplitude of the acceleration caused by gravity on earth ) is often considered as a constant; it changes with the distance between the point of measurement and the center of the earth. This is because the force of gravity that acts upon any two objects is given by Newton’s law of universal gravitation:
 \begin{gather}
     F=G\frac{m_1m_2}{r}
 \end{gather}
-Where $G$ is the gravitational constant, $r$ is the distance between center of mass of both objects, $m1$ is the mass of object 1 and $m2$ is the mass of object 2\\
+Where $G$ is the gravitational constant, $r$ is the distance between center of mass of both objects, $m1$ is the mass of object 1 and $m2$ is the mass of object 2.\\
 
-However, because earth is not a perfect sphere, r varies depending on altitude. This means that $g$ as mesaured in J-18 will be slightly different from the given value of $9.8 N/kg$. Since measuring the distance between the center of mass and the earth precisely is not something that can be easily done, another method has to be used.\\ 
+However, because earth is not a perfect sphere, $r$ varies with your position. This means that $g$ as mesaured in J-18 will be slightly different from the given value of $9.81 \si{m/s^2}$. Since measuring the distance between the center of mass and the earth precisely is not something that can be easily done, another method has to be used.\\ 
 
 Since the period of a pendulum $T$ only depend on its length $L$  and $g$, it can be used to find $g$ at any location.
 
@@ -50,37 +60,39 @@ Since the period of a pendulum $T$ only depend on its length $L$  and $g$, it ca
     T=2\pi\sqrt{\frac{L}{g}} \label{eq:simplependulum}
 \end{gather}
 
-Since a massless rope does not exist in real life, it is not possible really make a simple pendulum, and thus one can not simply use Eq (\ref{eq:simplependulum}). Using a Kater’s pendulum because it allows us to calculate gravity without finding the center of mass and center of oscillation. It is a pendulum with two masses that can be shifted along the length of the pendulum and two fixed pivot points. Finding the equation for the angular displacement, solving it to find the period andeliminating variables with clever algebra yields a simple formula.
+A massless rope does not exist in real life, it is not possible really make a simple pendulum, and thus one can not simply use Eq (\ref{eq:simplependulum}). Using Kater’s allows to find the gravitational acceleration without finding the center of mass and center of oscillation. It is a pendulum with two masses that can be shifted along the length of the pendulum and two fixed pivot points. Finding the equation for the angular displacement, solving it to find the period and eliminating variables with clever algebra yields a simple formula.
 
-When oscillating around Point A, the torque that pushes the pendulum back to its original position is given by:
+When oscillating around Point A, the torque that pushes the pendulum back to its original position is given by
 
 \begin{equation}\tau=|\vec{ R } x \vec{ F }| = Mgasin\left(\theta\right)\end{equation}
 
-Since clockwise rotation is a negative torque by convention, the restoring force is a negative toque.
+Since clockwise rotation is a negative torque by convention, the restoring force is a negative torque.
 
 \begin{equation}
     \tau=-Mgasin\left(\theta\right)
 \end{equation}
 
-Defining $\tau$ in function of inertia $I_a$, time $t$ and the angle $\theta$ using a different equation.
+Defining $\tau$ in function of inertia $I_a$, time $t$ and the angle $\theta$ using a different equation we get
 
-\begin{gather*}
-    \tau=I\alpha \\
-    \alpha=\frac{d\omega}{dt}=\frac{d}{dt}\frac{d\theta}{dt}=\frac{d^2\theta}{dt^2}\\
-    \tau=I_a\frac{d^2\theta}{dt^2} \label{eq:torque1}
-\end{gather*}
+\begin{equation}
+    \begin{gathered}
+        \tau=I\alpha \\
+        \alpha=\frac{d\omega}{dt}=\frac{d}{dt}\frac{d\theta}{dt}=\frac{d^2\theta}{dt^2}\\
+        \tau=I_a\frac{d^2\theta}{dt^2} \label{eq:torque1}
+    \end{gathered}
+\end{equation}
 
-Using the parallel axis theorem to define $I_a$ in terms of the moment of inertia about the center of mass $I_cm$.
+Using the parallel axis theorem to define $I_a$ in terms of the moment of inertia about the center of mass $I_{cm}$ we get
 
 \begin{equation}
     \begin{aligned}
-        I_a&=I_cm + Ma^2\\ 
+        I_a&=I_{cm} + Ma^2\\ 
         I_a&=Mk^2 + Ma^2\\ 
         I_a&= M(k^2+a^2) \label{eq:torque2}
     \end{aligned}
 \end{equation}
 
-Where $I_cm = Mk^2$,$k$ defines the radius of gyration about the center of mass, which is the distance from the axis of rotation the mass of the body would be if it was concentrated in a single point while keeping the same moment of inertia. Since Eq. (\ref{eq:torque1}) and Eq. (\ref{eq:torque2}) both represent torque, they are equal. Thus:
+Where $I_{cm} = Mk^2$,$k$ defines the radius of gyration about the center of mass, which is the distance from the axis of rotation the mass of the body would be if it was concentrated in a single point while keeping the same moment of inertia. Since Eq. (\ref{eq:torque1}) and Eq. (\ref{eq:torque2}) both represent torque, they are equal. Thus:
 
 \begin{equation}
         I_a\frac{d^2\theta}{dt^2}=-Mgasin\left(\theta\right) \label{eq:angulardisp}
@@ -152,12 +164,125 @@ We then solve the Eq. (\ref{eq:periodab}) for $g$
     \begin{aligned}
         T&=2\pi \sqrt{\frac{a+b}{ g }} \\
         T^2&=4\pi^2 \frac{a+b}{ g } \\
-        g&=4\pi^2\frac{ a+b }{ T^2 }
+        g&=4\pi^2\frac{ a+b }{ T^2 } \label{eq:final}
     \end{aligned}
 \end{equation}
 
-$a+b$ being the distance between the fixed pivot points, which is given in this case as being $a+b=100.06cm$
+$a+b$ being the distance between the fixed pivot points, which is given in this case as being $a+b=100.06cm$.
+\section*{Procedure}
+It was known that the distance between the near edge of the small mass and the extremity of the bar (the closest one) was between 12 and 14 cm, the period of oscillation was the same whether the big mass was up or down. We thus collected data in that range to get an overview of the behavior of the pendulum and to identify the distance at which the period of the mass up and the period of the big mass down were the closest. That distance happened to be 13 cm. Therefore, we zoomed that length, be taken measurements near that value, as presented in Table 1. 
 
 
+\begin{center}
+    \begin{threeparttable}\label{tab:periods}
+        \begin{tabular}{|c| c | c | c |}
+            \hline
+        M top (cm) & Period (s) & m top (cm) & Period (s) \\ \hline 
+        $\pm$ 0.05 &$\pm$ 0.0001 & $\pm$ 0.05 & $\pm$ 0.0001 \\ \hline
+        12.8       & 2.0077 & 12.8 &2.0075 \\ \hline
+        12.9       & 2.0077 & 12.9 &2.0071 \\ \hline
+        13         & 2.0069 & 13   &2.0068 \\ \hline
+        13.1       & 2.0069 & 13.1 &2.0067 \\ \hline
+        13.2       & 2.0062 & 13.2 &2.0066 \\ \hline
+    \end{tabular}
+
+    \begin{tablenotes}
+    \item \footnotesize \textbf{Table 1} The first column contains the distance between the big mass $(M)$ and the extremity of the ba, and the second column presents the corresponding period of oscillation. The third column contains the distance between the small mass $(m)$ and the extremity of the bar, and the fourth presents the corresponding period.  
+    \end{tablenotes}
+\end{threeparttable}
+\end{center}
+
+
+To take the measurements mentioned above, we first adjust the small mass at 14 cm. We hanged the pendulum on its support in such a way that it could oscillate about the knife-edge near the large mass. The edge was therefore the pivot point. On both sides of the small mass, close the floor, we set the photo-gate. The photo-gate was connected to the data-acquisition Capstone software, which recorded the period of oscillation. It was a little difficult to prevent the pendulum to oscillate back and forth—not only from left to tight and right to left. This had an impact on the period. Therefore, to make sure the proper period was recoded, we wait until Capstone gave us ten times the same period in a row—that indicates the end of significant back-and-forth oscillation. After measuring the period of oscillation of Kater’s pendulum with the big mass up, we simply reversed the pendulum and took the period with the small mass up.
+
+
+This procedure was repeated for all distances. A total of 10 distances, and consequently 20 periods, allowed us to settle at 13 cm. At that distance, the period of either side of the pendulum was almost the same: 2.0069 s with the big mass up, and 2.0068 s with the small mass up. Using a period of $(2.00685 \pm 0.0001)$ s, we compute the gravitational acceleration on Bishop’s campus: $(9.80822477 \pm 0.00005) \si{m/s^2}$. Taking advantage of the International Gravity Formula of 1980, we found out that Bishop’s is located at a latitude of $46.9^\circ$ north.
+\newpage
+\section*{Discussion \& Conclusion}
+
+Although one of the two values we obtained by solving the quadratic equation was negative, adding a cycle of $\pi$ to it, and the same g can be found. Actually, the proper answers are infinitely many solutions. In terms of radians, we can picture a sin function whose y-axis represents different values of g, and the x-axis represent multiple of $\pi$. Therefore, the answers are $\pi n - 0.54$ and $\pi n - 2.32$. In the first case, the function is going down, and in the second, it is going up. That is what Figure 1 shows. 
+
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{graph.jpg}
+\caption*{\footnotesize \textbf{Figure 1} The quadratic function giving an approximation of the gravitational acceleration with respect with the latitude (in radians).
+Image taken from Wolfram alpha. \label{graph}}
+\end{figure}
+
+
+The value of the gravitational acceleration we found tells us that we performed the experiment a few kilometers north of St-Raymond (near Quebec City), which is more than 200 km north of Lennoxville. In other words, we got a latitude of $(47.14082 \pm 0.00006)^\circ$ north, while the actual value is $45.36492^\circ$ north. We still think that our approximation is not bad at all! What explain the degrees off? Well we never measured the $5^\circ$ angular amplitude at which the pendulum was to be released. That angle was the maximum angle tolerated by the small angle approximation. If we were to redo the experiment paying closer attention to this fact, we think that instead of a g of  $(9.80822 \pm 0.00005)$ \si{m/s2h}, we would have found one a little smaller, bringing us at a still closer latitude. 
+\newpage
+\section*{Calculations}
+Using Eq \eqref{eq:final} we can compute the local value of the gravitational acceleration.
+
+\begin{equation}
+    \begin{aligned}
+        g&=4\pi^2\frac{ a+b }{ T^2 } \\ 
+        g&=4\pi^2\frac{1.0006\ \si{m} }{(2.00685\ \si{s} \pm 0.00001\ \si{s})^2} \\ 
+        g&=4\pi^2\frac{1.0006\  \si{m} }{(2.00685\ \si{s})^2 \pm 0.00050\% } \\ 
+        g&= 9.80822477\frac{\si{m}}{\si{s^2}} \pm 0.00050\% \\
+        g&= (9.80822 \pm 0.000005)\frac{\si{m}}{\si{s^2}}
+    \end{aligned}
+\end{equation}
+
+With this value, we can now find our latitude using the International Gravity Formula (1980):
+\begin{equation*}
+        g=9.780490(1 + 0.0052884\sin{\phi}^2 - 0.0000059\sin{2\phi}^2)
+\end{equation*}
+
+Replacing the three coefficients by X, Y, and Z, from left to right, will facilitate the algebra.
+
+\begin{equation*}
+    \begin{aligned}
+        g&=X(1 + Y\sin ^2(\phi) - Z\sin ^2(2\phi))\\
+        \frac{g}{x}&=1 + Y\sin ^2(\phi) - Z\sin ^2(2\phi)\\
+        0&=Y\sin ^2(\phi) - Z\sin ^2(2\phi)+(1-\frac{g}{x})\\
+        0&=Y\sin ^2(\phi) - Z(2(\sin(\phi)\cos(\phi)))^2+(1-\frac{g}{x})\\
+        0&=Y\sin ^2(\phi) - 4Z\sin ^2(\phi)\cos ^2(\phi)+(1-\frac{g}{x})\\
+        0&=Y\sin ^2(\phi) - 4Z\sin ^2(\phi)(1-\sin ^2(\phi))+(1-\frac{g}{x})\\
+        0&=4Z\sin ^4(\phi) - 4Z\sin ^2(\phi)+ Y\sin ^2(\phi))+(1-\frac{g}{x})\\
+        0&=4Z(\sin ^2(\phi))^2 + (Y-4Z)\sin ^2(\phi)+(1-\frac{g}{x})
+    \end{aligned}
+\end{equation*}
+
+Since the equation is of form $ax^2 + bx + c =0$, the quadratic formula can be used to solve for $\sin ^2(\phi)$
+
+
+    \begin{align*}
+        x&= \frac{-b\pm \sqrt{-b^2-4ac}}{2a}\\
+        \sin ^2(\phi)&=\frac{-(Y-4Z)\pm \sqrt{(-(Y-4Z))^2-4(4Z)(1-\frac{g}{x})}}{2(4Z)}\\
+        \begin{split}
+        \sin ^2(\phi)&= \frac{-(0.0052884-4(0.0000059))}{2(4(0.000059))} \\
+                     &\pm \frac{ \sqrt{((0.0052884-4(0.0000059)))^2-4(4 (0.0000059))(1-\frac{9.80822\pm 0.00005}{9.780490})}}{2(4 (0.0000059))}
+        \end{split}\\
+        \sin ^2(\phi)&=\frac{-(0.0052648)\pm \sqrt{0.000027718-(0.00000107\pm 0.00050 \%)}}{0.0000472}\\
+        \sin ^2(\phi)&=\frac{-(0.0052648)\pm \sqrt{0.000026648 \pm 0.00050 \%}}{0.0000472}\\
+    \end{align*}
+
+\begin{equation*}
+    \begin{split}
+        \sin ^2(\phi)&=\frac{-(0.0052648) + \sqrt{0.000026648}}{0.0000472}\\
+        \sin ^2(\phi)&=-223.6220711\pm \frac{1}{2}(0.00050 \%)\\
+        \sin ^2(\phi)&=-223.6220711\pm 0.000559055 \\
+        \sin ^2(\phi)&=-223.6221\pm 0.0006 
+    \end{split}
+    \qquad
+    \begin{split}
+        \sin ^2(\phi)&=\frac{-(0.0052648) - \sqrt{0.000026648}}{0.0000472}\\
+        \sin ^2(\phi)&=0.537296\pm \frac{1}{2}(0.00050 \%)\\
+        \sin ^2(\phi)&=0.537296\pm 0.000300396\\
+        \sin ^2(\phi)&=0.5373\pm 0.0003 
+    \end{split}
+\end{equation*}
+
+
+Solving $\sin ^2(\phi)=0.5373\pm 0.0003$ for $\phi$ 
+
+\begin{align*}
+        \sin ^2(\phi)&=0.5373\pm 0.0003\\
+    \phi&=\arcsin (\sqrt{0.5373296} \pm \frac{1}{2}(0.00025\%))\\
+    \phi&=(47.14082 \pm 0.00006)^\circ N
+\end{align*}
 
 \end{document}
