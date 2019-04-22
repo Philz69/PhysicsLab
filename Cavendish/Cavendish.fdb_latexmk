@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1555903427 "Cavendish.tex" "Cavendish.pdf" "Cavendish" 1555903427
-  "/dev/null" 1555865804 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1555967310 "Cavendish.tex" "Cavendish.pdf" "Cavendish" 1555967312
+  "/dev/null" 1555959278 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/share/texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex" 1541727709 22701 5fab7b8ebb90b053dc067d1bd37e43c2 ""
   "/usr/local/share/texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex" 1541727709 3047 aa82404aec57311271f4991c44bd71dc ""
   "/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex" 1541727709 23537 54be8160344d894595f6d145b1311658 ""
@@ -201,15 +201,15 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1550406775 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1554656980 334420 7081c7e7d9afe2fb292dc65f73792ab6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1554656945 7919195 a3dbe96b4a07ed2c16b645e853222ed1 ""
-  "Cavendish.aux" 1555903416 238 506c62219d20105940573c04aaf06d10 ""
-  "Cavendish.tex" 1555903426 10051 0b0ffdf608337c472ab5e62ffa279706 ""
+  "Cavendish.aux" 1555967312 238 6ecc90bfb10711defe52b1f2b780eb0c ""
+  "Cavendish.tex" 1555967306 10002 1aeb283f8cb3831fb4d933adfdccb05e ""
   (generated)
   "AC1Lab.pdf"
-  "Cavendish.pdf"
-  "Cavendish.log"
+  "KaterPendulum.aux"
+  "AC1Lab.log"
+  "KaterPendulum.log"
+  "AC1Lab.aux"
   "Cavendish.aux"
   "KaterPendulum.pdf"
-  "AC1Lab.aux"
-  "KaterPendulum.aux"
-  "KaterPendulum.log"
-  "AC1Lab.log"
+  "Cavendish.pdf"
+  "Cavendish.log"
