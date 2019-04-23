@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1555965348 "KaterPendulum.tex" "KaterPendulum.pdf" "KaterPendulum" 1555965350
-  "/dev/null" 1555959278 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1555993585 "KaterPendulum.tex" "KaterPendulum.pdf" "KaterPendulum" 1555993587
+  "/dev/null" 1553889348 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/share/texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex" 1541727709 22701 5fab7b8ebb90b053dc067d1bd37e43c2 ""
   "/usr/local/share/texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex" 1541727709 3047 aa82404aec57311271f4991c44bd71dc ""
   "/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex" 1541727709 23537 54be8160344d894595f6d145b1311658 ""
@@ -198,13 +198,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1550406775 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1554656980 334420 7081c7e7d9afe2fb292dc65f73792ab6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1554656945 7919195 a3dbe96b4a07ed2c16b645e853222ed1 ""
-  "KaterPendulum.aux" 1555965349 496 f0b67425ccd0560df54cf54640b3e723 ""
-  "KaterPendulum.tex" 1555965344 14734 c6ad9aeffd1374e698c08c4ca4097341 ""
+  "KaterPendulum.aux" 1555993587 496 c80f967144367b2bca687783508515a2 ""
+  "KaterPendulum.tex" 1555993579 14873 e9ac8d0599ec9a9a8a097c987aff28ac ""
   "graph.jpg" 1555891497 19818 dfa9e1bcad54f477e826081d39c09a6c ""
   (generated)
+  "KaterPendulum.aux"
+  "AC1Lab.pdf"
   "KaterPendulum.log"
   "AC1Lab.log"
-  "AC1Lab.aux"
-  "AC1Lab.pdf"
-  "KaterPendulum.aux"
   "KaterPendulum.pdf"
+  "AC1Lab.aux"

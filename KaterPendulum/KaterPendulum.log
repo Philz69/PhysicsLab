@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.4.7)  22 APR 2019 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.4.7)  23 APR 2019 00:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -823,12 +823,12 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -838,19 +838,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 <graph.jpg, id=33, 610.28pt x 211.79124pt>
 File: graph.jpg Graphic file (type jpg)
 <use graph.jpg>
-Package pdftex.def Info: graph.jpg  used on input line 208.
+Package pdftex.def Info: graph.jpg  used on input line 212.
 (pdftex.def)             Requested size: 341.43306pt x 118.49564pt.
  [6 <./graph.jpg>] [7] [8] (./KaterPendulum.aux) ) 
 Here is how much of TeX's memory you used:
  36822 strings out of 492616
  873545 string characters out of 6135178
- 1010441 words of memory out of 5000000
+ 1010439 words of memory out of 5000000
  40281 multiletter control sequences out of 15000+600000
  540889 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,19n,96p,966b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on KaterPendulum.pdf (8 pages, 169743 bytes).
+Output written on KaterPendulum.pdf (8 pages, 169857 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
